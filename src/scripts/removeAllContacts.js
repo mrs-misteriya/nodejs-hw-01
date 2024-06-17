@@ -7,4 +7,4 @@ export const removeAllContacts = async () => {
     console.log(removedData);
 };
 
-await removeAllContacts();
+removeAllContacts();
