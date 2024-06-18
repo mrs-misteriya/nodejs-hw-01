@@ -6,8 +6,8 @@ export const removeLastContact = async () => {
     const allContacts = JSON.parse(data);
 
     if (allContacts.length !== 0) {
-       const deletedContact = allContacts.pop();
-       console.log(deletedContact);
+       const deletedContact = allContacts.splice(allContacts.length-1, 1);
+        await fs.writeFile( PATH_DB, JSON.stringify(allContacts, null, 2));
     } else {
         console.log('Контактів для видалення немає');
     }
